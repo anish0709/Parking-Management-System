@@ -70,7 +70,6 @@ const ProfileSideBar = () => {
     const imageData = await compress.compress([imgFile], { size: 0.2, quality: 0.5 });
     const compressedImg = imageData[0].prefix + imageData[0].data;
     console.log(compressedImg);
-    console.log(compressedImg instanceof HTMLCanvasElement);
     const detections = await faceapi.detectSingleFace(compressedImg).withFaceLandmarks();
     console.log(detections);
 

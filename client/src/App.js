@@ -55,12 +55,11 @@ const App = () => {
         await faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL)
         await faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL)
         setModelisLoaded(true)
-        const { Canvas, Image, ImageData } = canvas
         faceapi.env.monkeyPatch({
             fetch: fetch,
             Canvas: window.HTMLCanvasElement,
             Image: window.HTMLImageElement,
-            ImageData: ImageData,
+            ImageData: window.ImageData,
             createCanvasElement: () => document.createElement('canvas'),
             createImageElement: () => document.createElement('img')
         });
