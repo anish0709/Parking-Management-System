@@ -291,10 +291,12 @@ exports.sendResetEmail = async (req, res) => {
         const subject = "[Smart Parker] Link to Reset Your Password"
 
         //send email to user with the code appended to link
+        // Ensure no trailing slash in REACT_APP_URL to avoid double slashes
+        const baseUrl = (process.env.REACT_APP_URL || "http://localhost:3000").replace(/\/$/, "");
         const html = `
                         To reset Your password follow the link below:
                         Reset Your password
-                        ${process.env.REACT_APP_URL || "http://localhost:3000"}/resetPassword/${resetCode}
+                        ${baseUrl}/resetPassword/${resetCode}
                         If you haven't made this request. simply ignore the mail and no changes will be made
         `
         const receiverMail = req.body.email

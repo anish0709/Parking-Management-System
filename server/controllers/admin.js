@@ -12,9 +12,9 @@ const sendEmail2 = require('../Utils/sendEmail2')
 exports.createAdmin = async (req, res) => {
     const hashedPassword = passwordHash.generate('admin123')
     const newUser = await User.create({
-        email: 'fenil13@gmail.com', password: hashedPassword,
-        firstName: 'Fenil', lastName: 'Shiroya',
-        userName: 'fenil1307', mobileNo: '7016046028',
+        email: 'anishudr1@gmail.com', password: hashedPassword,
+        firstName: 'Anish', lastName: 'Singhal',
+        userName: 'anish12345', mobileNo: '8905115739',
         createdAt: new Date().toISOString(),
         verified: true,
         otp: '123',

@@ -92,7 +92,7 @@ const ContactUs = () => {
                 <Typography variant='h5' sx={styles.listItemText}>
                   Email ID:{' '}
                 </Typography>
-                <Link href='mailto:fenilshiroya9@gmail.com' target='_blank' color='#012dfe'>
+                <Link href='mailto:anish.singhal0709@gmail.com' target='_blank' color='#012dfe'>
                   anish.singhal0709@gmail.com
                 </Link>
               </ListItem>
