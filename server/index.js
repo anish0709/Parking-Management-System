@@ -23,7 +23,7 @@ const vapidKeys = {
   privateKey: 'qPkiFL_wa7ScqLrPtPekBA-G_8coJN3POtV5MrxeMO4',
 };
 
-const subject = 'mailto:anishudr1@gmail.com'; // Replace with your email address or contact information.
+const subject = 'mailto:anishudr1@gmail.com';
 
 webpush.setVapidDetails(subject, vapidKeys.publicKey, vapidKeys.privateKey);
 
