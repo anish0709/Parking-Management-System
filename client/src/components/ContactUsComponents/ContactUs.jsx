@@ -85,7 +85,7 @@ const ContactUs = () => {
             <Typography variant='h2'>Contact Us</Typography>
             <Typography variant='p'>
               Thank you for showing interest in our services. Feel free to reach out to us on
-              various social media platforms:
+              various social media platforms, ping us on our email or call us on our number:
             </Typography>
             <List>
               <ListItem>
