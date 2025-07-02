@@ -1,7 +1,6 @@
 import React, { useMemo, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as faceapi from 'face-api.js'
-import canvas from 'canvas';
 import { Container, AppBar, } from '@mui/material'
 import Navbar from './components/Navbar/Navbar';
 import AboutUs from './components/AboutUsComponents/About';
