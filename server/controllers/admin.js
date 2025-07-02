@@ -14,7 +14,7 @@ exports.createAdmin = async (req, res) => {
     const newUser = await User.create({
         email: 'anishudr1@gmail.com', password: hashedPassword,
         firstName: 'Anish', lastName: 'Singhal',
-        userName: 'anish1234', mobileNo: '8905115739',
+        userName: 'anish123', mobileNo: '8905115739',
         createdAt: new Date().toISOString(),
         verified: true,
         otp: '123',
