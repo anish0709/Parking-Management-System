@@ -256,19 +256,24 @@ const RegisterPage = () => {
     dispatch(setInProgress2(true));
     const imageData = await compress.compress([imgFile], { size: 0.2, quality: 0.5 });
     const compressedImg = imageData[0].prefix + imageData[0].data;
-    const testImg = await canvas.loadImage(compressedImg);
-    const myCanvas = canvas.createCanvas(200, 200);
-    const ctx = myCanvas.getContext('2d');
-    ctx.drawImage(testImg, 0, 0, 200, 200);
-    const detections = await faceapi.detectSingleFace(myCanvas).withFaceLandmarks();
-    console.log(detections);
-    dispatch(setInProgress2(false));
-    if (detections === undefined) {
-      dispatch(setAlert({ msg: 'Please select a photo with face clearly visible', type: 'error' }));
-      return;
-    }
-    setImgFIlename(imgFile.name);
-    setFormData({ ...formData, selectedImg: compressedImg });
+    const img = new window.Image();
+    img.src = compressedImg;
+    img.onload = () => {
+      const myCanvas = document.createElement('canvas');
+      myCanvas.width = 200;
+      myCanvas.height = 200;
+      const ctx = myCanvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, 200, 200);
+      const detections = await faceapi.detectSingleFace(myCanvas).withFaceLandmarks();
+      console.log(detections);
+      dispatch(setInProgress2(false));
+      if (detections === undefined) {
+        dispatch(setAlert({ msg: 'Please select a photo with face clearly visible', type: 'error' }));
+        return;
+      }
+      setImgFIlename(imgFile.name);
+      setFormData({ ...formData, selectedImg: compressedImg });
+    };
   };
 
   const handleResendOTPClick = () => {
