@@ -258,7 +258,7 @@ const RegisterPage = () => {
     const compressedImg = imageData[0].prefix + imageData[0].data;
     const img = new window.Image();
     img.src = compressedImg;
-    img.onload = () => {
+    img.onload = async () => {
       const myCanvas = document.createElement('canvas');
       myCanvas.width = 200;
       myCanvas.height = 200;
@@ -268,7 +268,9 @@ const RegisterPage = () => {
       console.log(detections);
       dispatch(setInProgress2(false));
       if (detections === undefined) {
-        dispatch(setAlert({ msg: 'Please select a photo with face clearly visible', type: 'error' }));
+        dispatch(
+          setAlert({ msg: 'Please select a photo with face clearly visible', type: 'error' }),
+        );
         return;
       }
       setImgFIlename(imgFile.name);
