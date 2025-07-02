@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //create a request with baseURL as hosted server url
-const API = axios.create({baseURL: process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000'})
+const API = axios.create({baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000'})
 
 //This adds the authentication token to header of each request sent  to server
 //which is later retrived at server end and used to check for authenticated request
