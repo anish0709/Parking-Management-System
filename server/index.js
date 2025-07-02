@@ -49,6 +49,7 @@ app.use((req, res, next) => {
     const allowedOrigins = [
         'http://localhost:3000',
         'http://localhost:3001', 
+        'https://parking-management-system-1-zbo8.onrender.com',
         process.env.REACT_APP_URL
     ].filter(Boolean);
     
